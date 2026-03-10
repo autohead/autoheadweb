@@ -1,18 +1,18 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import HeroSection from './components/user/HeroSerction';
-import ServiceSection from './components/user/ServiceSection';
-import ProductGallery from './components/user/ProductGallery';
-import ReviewSection from './components/user/ReviewSection';
-import OffersSection from './components/user/OffersSection';
-import AboutSection from './components/user/AboutSection';
-
-
 import {
   Menu,
   X,
   Wrench,
 } from 'lucide-react';
+import HeroSection from './components/user/HeroSection';
+import ServiceSection from './components/user/ServiceSection';
+import ProductGallery from './components/user/ProductGallery';
+import ReviewSection from './components/user/ReviewSection';
+import OffersSection from './components/user/OffersSection';
+import AboutSection from './components/user/AboutSection';
+import NavigationsDesktop from './components/user/constants/NavigationsDesktop';
+import MobileMenu from './components/user/constants/MobileMenu';
 import WhatsAppFloating from './components/user/WhatsAppFloating';
 import FooterSection from './components/user/FooterSection';
 import ContactSection from './components/user/ContactSection';
@@ -41,9 +41,6 @@ export default function App() {
   };
 
 
-  
-  
-
   return (
     <div className="bg-black text-white">
       {/* Navigation */}
@@ -65,29 +62,7 @@ export default function App() {
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              <button onClick={() => scrollToSection('home')} className="hover:text-red-500 transition-colors">
-                Home
-              </button>
-              <button onClick={() => scrollToSection('about')} className="hover:text-red-500 transition-colors">
-                About
-              </button>
-              <button onClick={() => scrollToSection('services')} className="hover:text-red-500 transition-colors">
-                Services
-              </button>
-              <button onClick={() => scrollToSection('gallery')} className="hover:text-red-500 transition-colors">
-                Gallery
-              </button>
-              <button onClick={() => scrollToSection('reviews')} className="hover:text-red-500 transition-colors">
-                Reviews
-              </button>
-              <button onClick={() => scrollToSection('offers')} className="hover:text-red-500 transition-colors">
-                Offers
-              </button>
-              <button onClick={() => scrollToSection('contact')} className="hover:text-red-500 transition-colors">
-                Contact
-              </button>
-            </div>
+            <NavigationsDesktop scrollToSection={scrollToSection} />
 
             {/* Mobile Menu Button */}
             <button
@@ -107,50 +82,7 @@ export default function App() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
           >
-            <div className="px-4 pt-2 pb-4 space-y-2">
-              <button
-                onClick={() => scrollToSection('home')}
-                className="block w-full text-left py-2 hover:text-red-500 transition-colors"
-              >
-                Home
-              </button>
-              <button
-                onClick={() => scrollToSection('about')}
-                className="block w-full text-left py-2 hover:text-red-500 transition-colors"
-              >
-                About
-              </button>
-              <button
-                onClick={() => scrollToSection('services')}
-                className="block w-full text-left py-2 hover:text-red-500 transition-colors"
-              >
-                Services
-              </button>
-              <button
-                onClick={() => scrollToSection('gallery')}
-                className="block w-full text-left py-2 hover:text-red-500 transition-colors"
-              >
-                Gallery
-              </button>
-              <button
-                onClick={() => scrollToSection('reviews')}
-                className="block w-full text-left py-2 hover:text-red-500 transition-colors"
-              >
-                Reviews
-              </button>
-              <button
-                onClick={() => scrollToSection('offers')}
-                className="block w-full text-left py-2 hover:text-red-500 transition-colors"
-              >
-                Offers
-              </button>
-              <button
-                onClick={() => scrollToSection('contact')}
-                className="block w-full text-left py-2 hover:text-red-500 transition-colors"
-              >
-                Contact
-              </button>
-            </div>
+            <MobileMenu scrollToSection={scrollToSection} />
           </motion.div>
         )}
       </motion.nav>
