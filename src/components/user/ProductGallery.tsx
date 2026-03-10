@@ -4,7 +4,7 @@ type GalleryProps = {
   isLightboxOpen: boolean
   setLightboxImage: (img: string | null) => void
 }
-export default function WorkGallerySection({  setLightboxImage }: GalleryProps) {
+export default function ProductGallery({  setLightboxImage }: GalleryProps) {
     const galleryImages = [
     { url: 'https://images.unsplash.com/photo-1765173330859-b2c2bd78a174?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2RpZmllZCUyMHNwb3J0cyUyMGNhciUyMHJlZCUyMGxpZ2h0c3xlbnwxfHx8fDE3NzMxMzcxODh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral', alt: 'Modified Sports Car' },
     { url: 'https://images.unsplash.com/photo-1661336878277-1d0078e7b3e4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBjYXIlMjBpbnRlcmlvciUyMGxlYXRoZXJ8ZW58MXx8fHwxNzczMTM3MTg5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral', alt: 'Luxury Leather Interior' },
@@ -31,7 +31,7 @@ export default function WorkGallerySection({  setLightboxImage }: GalleryProps) 
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Our <span className="text-red-500">Work Gallery</span>
+              Our <span className="text-red-500">Product Gallery</span>
             </h2>
             <div className="w-24 h-1 bg-red-500 mx-auto mb-4"></div>
             <p className="text-gray-400 max-w-2xl mx-auto">

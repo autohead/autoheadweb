@@ -10,17 +10,17 @@ export default function ReviewSection() {
       review: 'Excellent service! They installed a premium audio system in my car. The sound quality is amazing and the team was very professional.',
     },
     {
-      name: 'Priya Sharma',
+      name: 'Ajmal',  
       rating: 5,
       review: 'Best place for car customization! Got my car wrapped and the result is stunning. Highly recommend their services.',
     },
     {
-      name: 'Amit Patel',
+      name: 'Willyem',
       rating: 5,
       review: 'Very satisfied with the Teflon coating service. My car looks brand new and the shine is incredible. Great work!',
     },
     {
-      name: 'Sarah Johnson',
+      name: 'Arafad',
       rating: 5,
       review: 'Professional team with quality work. The leather seat fitting was done perfectly. Will definitely come back for more services.',
     },

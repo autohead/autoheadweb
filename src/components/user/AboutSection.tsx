@@ -26,7 +26,7 @@ export default function AboutSection() {
             >
               <p className="text-lg text-gray-300 mb-6 leading-relaxed">
                 Welcome to Auto Head, your premier destination for car accessories and professional customization
-                services. With over 15 years of experience in the automotive industry, we pride ourselves on delivering
+                services. we pride ourselves on delivering
                 exceptional quality and customer satisfaction.
               </p>
               <p className="text-lg text-gray-300 mb-6 leading-relaxed">
@@ -40,14 +40,14 @@ export default function AboutSection() {
                   <div className="flex justify-center mb-2">
                     <Award className="w-12 h-12 text-red-500" />
                   </div>
-                  <div className="text-3xl font-bold text-red-500">15+</div>
-                  <div className="text-sm text-gray-400">Years Experience</div>
+                  <div className="text-3xl font-bold text-red-500">100+</div>
+                  <div className="text-sm text-gray-400">Quality Products</div>
                 </div>
                 <div className="text-center">
                   <div className="flex justify-center mb-2">
                     <Users className="w-12 h-12 text-red-500" />
                   </div>
-                  <div className="text-3xl font-bold text-red-500">5000+</div>
+                  <div className="text-3xl font-bold text-red-500">200+</div>
                   <div className="text-sm text-gray-400">Happy Clients</div>
                 </div>
                 <div className="text-center">
