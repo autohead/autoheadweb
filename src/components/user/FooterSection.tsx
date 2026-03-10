@@ -71,7 +71,7 @@ export default function FooterSection({ scrollToSection }: FooterProps) {
                   <Facebook className="w-5 h-5" />
                 </a>
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/auto_head.kannur?igsh=dzJuZmE4bjA2aTl5&utm_source=qr"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 bg-zinc-800 rounded-lg hover:bg-red-500 transition-colors"

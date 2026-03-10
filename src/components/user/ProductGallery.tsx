@@ -1,24 +1,40 @@
 import { motion } from 'motion/react';
+import { productImg } from './constants/ProductImages';
 
 type GalleryProps = {
   isLightboxOpen: boolean
   setLightboxImage: (img: string | null) => void
 }
 export default function ProductGallery({  setLightboxImage }: GalleryProps) {
-    const galleryImages = [
-    { url: 'https://images.unsplash.com/photo-1765173330859-b2c2bd78a174?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2RpZmllZCUyMHNwb3J0cyUyMGNhciUyMHJlZCUyMGxpZ2h0c3xlbnwxfHx8fDE3NzMxMzcxODh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral', alt: 'Modified Sports Car' },
-    { url: 'https://images.unsplash.com/photo-1661336878277-1d0078e7b3e4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBjYXIlMjBpbnRlcmlvciUyMGxlYXRoZXJ8ZW58MXx8fHwxNzczMTM3MTg5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral', alt: 'Luxury Leather Interior' },
-    { url: 'https://images.unsplash.com/photo-1760552974114-a83335352b76?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXIlMjBhdWRpbyUyMHN5c3RlbSUyMGluc3RhbGxhdGlvbnxlbnwxfHx8fDE3NzMxMzcxODl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral', alt: 'Car Audio System' },
-    { url: 'https://images.unsplash.com/photo-1760689043009-f9ef9b34a5a3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjdXN0b20lMjBhbGxveSUyMHdoZWVsc3xlbnwxfHx8fDE3NzMxMzcxOTB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral', alt: 'Custom Alloy Wheels' },
-    { url: 'https://images.unsplash.com/photo-1719119985161-c3e6837f6478?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXIlMjBkZXRhaWxpbmclMjBjb2F0aW5nfGVufDF8fHx8MTc3MzEzNzE5MHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral', alt: 'Car Coating' },
-    { url: 'https://images.unsplash.com/photo-1643945026095-ab262ab55e4a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXIlMjB3aW5kb3clMjB0aW50aW5nJTIwZmlsbXxlbnwxfHx8fDE3NzMxMzcxOTB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral', alt: 'Window Tinting' },
-    { url: 'https://images.unsplash.com/photo-1708441434479-c765f26d9f54?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXIlMjBjdXN0b21pemF0aW9uJTIwd29ya3Nob3B8ZW58MXx8fHwxNzczMTM3MTkxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral', alt: 'Workshop' },
-    { url: 'https://images.unsplash.com/photo-1726689265081-3934d85d0367?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2RpZmllZCUyMGNhciUyMG5pZ2h0fGVufDF8fHx8MTc3MzEzNzE5MXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral', alt: 'Modified Car Night' },
-    { url: 'https://images.unsplash.com/photo-1570762574066-a238075b62f9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXIlMjBwYWludCUyMGpvYiUyMGN1c3RvbXxlbnwxfHx8fDE3NzMxMzcxOTJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral', alt: 'Custom Paint' },
-    { url: 'https://images.unsplash.com/photo-1758411897888-3ca658535fdf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBjYXIlMjBkYXNoYm9hcmR8ZW58MXx8fHwxNzczMTM3MTkyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral', alt: 'Luxury Dashboard' },
-    { url: 'https://images.unsplash.com/photo-1651560111117-146a15f36490?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcG9ydHMlMjBjYXIlMjB3aGVlbHMlMjBjbG9zZSUyMHVwfGVufDF8fHx8MTc3MzEzNzE5Mnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral', alt: 'Wheels Close Up' },
-    { url: 'https://images.unsplash.com/photo-1751267464812-0bb7764e87f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXIlMjB3cmFwJTIwdmlueWwlMjBzdGlja2VyfGVufDF8fHx8MTc3MzEzNzE5Mnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral', alt: 'Car Wrap' },
-  ];
+  //   const galleryImages = [
+  //   { url: 'https://images.unsplash.com/photo-1765173330859-b2c2bd78a174?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2RpZmllZCUyMHNwb3J0cyUyMGNhciUyMHJlZCUyMGxpZ2h0c3xlbnwxfHx8fDE3NzMxMzcxODh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral', alt: 'Modified Sports Car' },
+  //   { url: 'https://images.unsplash.com/photo-1661336878277-1d0078e7b3e4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBjYXIlMjBpbnRlcmlvciUyMGxlYXRoZXJ8ZW58MXx8fHwxNzczMTM3MTg5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral', alt: 'Luxury Leather Interior' },
+  //   { url: 'https://images.unsplash.com/photo-1760552974114-a83335352b76?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXIlMjBhdWRpbyUyMHN5c3RlbSUyMGluc3RhbGxhdGlvbnxlbnwxfHx8fDE3NzMxMzcxODl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral', alt: 'Car Audio System' },
+  //   { url: 'https://images.unsplash.com/photo-1760689043009-f9ef9b34a5a3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjdXN0b20lMjBhbGxveSUyMHdoZWVsc3xlbnwxfHx8fDE3NzMxMzcxOTB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral', alt: 'Custom Alloy Wheels' },
+  //   { url: 'https://images.unsplash.com/photo-1719119985161-c3e6837f6478?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXIlMjBkZXRhaWxpbmclMjBjb2F0aW5nfGVufDF8fHx8MTc3MzEzNzE5MHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral', alt: 'Car Coating' },
+  //   { url: 'https://images.unsplash.com/photo-1643945026095-ab262ab55e4a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXIlMjB3aW5kb3clMjB0aW50aW5nJTIwZmlsbXxlbnwxfHx8fDE3NzMxMzcxOTB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral', alt: 'Window Tinting' },
+  //   { url: 'https://images.unsplash.com/photo-1708441434479-c765f26d9f54?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXIlMjBjdXN0b21pemF0aW9uJTIwd29ya3Nob3B8ZW58MXx8fHwxNzczMTM3MTkxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral', alt: 'Workshop' },
+  //   { url: 'https://images.unsplash.com/photo-1726689265081-3934d85d0367?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2RpZmllZCUyMGNhciUyMG5pZ2h0fGVufDF8fHx8MTc3MzEzNzE5MXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral', alt: 'Modified Car Night' },
+  //   { url: 'https://images.unsplash.com/photo-1570762574066-a238075b62f9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXIlMjBwYWludCUyMGpvYiUyMGN1c3RvbXxlbnwxfHx8fDE3NzMxMzcxOTJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral', alt: 'Custom Paint' },
+  //   { url: 'https://images.unsplash.com/photo-1758411897888-3ca658535fdf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBjYXIlMjBkYXNoYm9hcmR8ZW58MXx8fHwxNzczMTM3MTkyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral', alt: 'Luxury Dashboard' },
+  //   { url: 'https://images.unsplash.com/photo-1651560111117-146a15f36490?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcG9ydHMlMjBjYXIlMjB3aGVlbHMlMjBjbG9zZSUyMHVwfGVufDF8fHx8MTc3MzEzNzE5Mnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral', alt: 'Wheels Close Up' },
+  //   { url: 'https://images.unsplash.com/photo-1751267464812-0bb7764e87f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXIlMjB3cmFwJTIwdmlueWwlMjBzdGlja2VyfGVufDF8fHx8MTc3MzEzNzE5Mnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral', alt: 'Car Wrap' },
+  // ];
+
+  const productImages = [
+    { url: productImg[0], alt: 'Product 1' },
+    { url: productImg[1], alt: 'Product 2' },
+    { url: productImg[2], alt: 'Product 3' },
+    { url: productImg[3], alt: 'Product 4' },
+    { url: productImg[4], alt: 'Product 5' },
+    { url: productImg[5], alt: 'Product 6' },
+    { url: productImg[6], alt: 'Product 7' },
+    { url: productImg[7], alt: 'Product 8' },
+    { url: productImg[8], alt: 'Product 9' },
+    { url: productImg[9], alt: 'Product 10' },
+    { url: productImg[10], alt: 'Product 11' },
+    { url: productImg[11], alt: 'Product 12' },
+  ] // Show only first 8 images for product gallery
 
   return (
     <section id="gallery" className="py-20 bg-zinc-900">
@@ -40,7 +56,7 @@ export default function ProductGallery({  setLightboxImage }: GalleryProps) {
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {galleryImages.map((image, index) => (
+            {productImages.map((image, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.8 }}

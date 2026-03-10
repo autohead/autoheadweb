@@ -65,7 +65,7 @@ export default function OffersSection({ scrollToSection }: OffersSectionProps) {
                   onClick={() => scrollToSection('contact')}
                   className="bg-white text-red-500 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
                 >
-                  Get This Offer
+                  Coming Soon...
                 </button>
               </motion.div>
             ))}

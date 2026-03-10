@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Award, Users, CheckCircle } from 'lucide-react';
+import bg from '../../assets/AUTOHEADLOGO.jpeg';
 export default function AboutSection() {
     return (
         <section id="about" className="py-20 bg-zinc-900">
@@ -68,7 +69,7 @@ export default function AboutSection() {
               className="relative"
             >
               <img
-                src="https://images.unsplash.com/photo-1708441434479-c765f26d9f54?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXIlMjBjdXN0b21pemF0aW9uJTIwd29ya3Nob3B8ZW58MXx8fHwxNzczMTM3MTkxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                src={bg}
                 alt="Workshop"
                 className="rounded-lg shadow-2xl shadow-red-500/20"
               />
